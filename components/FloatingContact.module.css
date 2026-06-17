@@ -1,0 +1,121 @@
+.container {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 500;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Main FAB */
+.fab {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: var(--green);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.4), 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  position: relative;
+  z-index: 10;
+}
+
+.fab:hover {
+  background: #00e63a;
+  box-shadow: 0 0 30px rgba(0, 255, 65, 0.6), 0 4px 20px rgba(0, 0, 0, 0.4);
+  transform: scale(1.05);
+}
+
+.fab:active {
+  transform: scale(0.97);
+}
+
+.fabOpen {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--green-border);
+}
+
+.fabOpen:hover {
+  background: var(--bg-surface);
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.15);
+}
+
+.fabIcon {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--bg-primary);
+  letter-spacing: -0.05em;
+  transition: transform 0.3s ease;
+}
+
+.fabIconOpen {
+  color: var(--green);
+  font-size: 1.1rem;
+}
+
+/* Social buttons stack */
+.socials {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.socialsOpen {
+  pointer-events: all;
+}
+
+.socialBtn {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: var(--bg-surface);
+  border: 1px solid var(--green-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+
+  /* Hidden by default */
+  opacity: 0;
+  transform: translateY(16px) scale(0.8);
+  transition: opacity 0.25s ease var(--delay, 0s),
+              transform 0.25s ease var(--delay, 0s),
+              color 0.2s ease,
+              border-color 0.2s ease,
+              background 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.socialsOpen .socialBtn {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.socialBtn:hover {
+  color: var(--social-color, var(--green));
+  border-color: var(--social-color, var(--green));
+  background: color-mix(in srgb, var(--social-color, var(--green)) 12%, var(--bg-surface));
+  box-shadow: 0 0 16px color-mix(in srgb, var(--social-color, var(--green)) 30%, transparent);
+  transform: scale(1.1) !important;
+  text-shadow: none;
+}
+
+@media (max-width: 480px) {
+  .container {
+    bottom: 20px;
+    right: 20px;
+  }
+}

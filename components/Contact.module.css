@@ -1,0 +1,158 @@
+.section {
+  background: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.bgGlow {
+  position: absolute;
+  bottom: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(ellipse at center, rgba(0, 255, 65, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 64px;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.preTitle {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.85rem;
+}
+
+.prompt {
+  color: var(--green-dim);
+}
+
+.cmd {
+  color: var(--text-dim);
+}
+
+.title {
+  font-family: var(--font-mono), monospace;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  color: var(--green);
+  line-height: 1.15;
+  text-shadow: 0 0 30px rgba(0, 255, 65, 0.2);
+}
+
+.body {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  max-width: 520px;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.emailLink {
+  font-family: var(--font-mono), monospace;
+  font-size: 1.1rem;
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: text-shadow 0.2s ease;
+}
+
+.emailLink:hover {
+  text-shadow: 0 0 15px var(--green);
+}
+
+.emailIcon {
+  font-size: 1.2rem;
+}
+
+.igLink {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.igLink span {
+  color: var(--green-dim);
+}
+
+.ctas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Terminal panel */
+.terminal {
+  background: var(--bg-surface);
+  border: 1px solid var(--green-border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(0, 255, 65, 0.07);
+}
+
+.termTitle {
+  margin-left: 12px;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.termBody {
+  padding: 20px 24px;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.82rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  line-height: 1.7;
+}
+
+.c1 {
+  color: var(--green-dim);
+}
+.c2 {
+  color: var(--text-primary);
+}
+.comment {
+  color: var(--text-dim);
+}
+.output {
+  color: var(--green);
+  padding-left: 4px;
+}
+.cur {
+  animation: blink 1s step-end infinite;
+  color: var(--green);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+  .terminal {
+    display: none;
+  }
+}

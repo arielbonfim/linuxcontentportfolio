@@ -1,0 +1,125 @@
+.section {
+  background: var(--bg-primary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  position: sticky;
+  top: calc(var(--nav-height) + 32px);
+}
+
+.imgSlot {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tools {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.toolsLabel {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.toolsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.prose {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.prose p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.85;
+}
+
+/* Timeline */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.timelineLabel {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.timelineItem {
+  display: grid;
+  grid-template-columns: 56px 20px 1fr;
+  align-items: start;
+  gap: 0 16px;
+  padding-bottom: 24px;
+  position: relative;
+}
+
+.timelineItem:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: calc(56px + 16px + 9px);
+  top: 20px;
+  width: 2px;
+  height: calc(100% - 4px);
+  background: linear-gradient(to bottom, var(--green-dim), transparent);
+}
+
+.timelineYear {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.8rem;
+  color: var(--green);
+  padding-top: 2px;
+  text-align: right;
+}
+
+.timelineDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--green);
+  background: var(--bg-primary);
+  box-shadow: 0 0 8px var(--green);
+  margin-top: 4px;
+}
+
+.timelineEvent {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .left {
+    position: static;
+  }
+}

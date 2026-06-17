@@ -1,0 +1,109 @@
+.section {
+  background: var(--bg-surface);
+  border-top: 1px solid var(--green-border);
+  border-bottom: 1px solid var(--green-border);
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 680px;
+  margin-bottom: 48px;
+}
+
+.intro p {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 720px;
+}
+
+.barTitle {
+  margin-left: 12px;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.cardInner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+
+
+.includesLabel {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.listItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.listArrow {
+  color: var(--green);
+  font-size: 0.8rem;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.note {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: rgba(0, 255, 65, 0.05);
+  border: 1px solid var(--green-border);
+  border-radius: 6px;
+  padding: 16px;
+}
+
+.noteIcon {
+  color: var(--green);
+  font-family: var(--font-mono), monospace;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.note p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.ctaEmail {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}

@@ -1,0 +1,82 @@
+.footer {
+  background: var(--bg-surface);
+  border-top: 1px solid var(--green-border);
+  padding: 40px 0;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.brand {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.prompt {
+  color: var(--green-dim);
+}
+
+.cursor {
+  color: var(--green);
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.socials {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--green-border);
+  border-radius: 6px;
+  color: var(--text-dim);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.socialIcon:hover {
+  color: var(--green);
+  border-color: var(--green-dim);
+  background: var(--green-glow);
+  box-shadow: 0 0 10px var(--green-glow);
+  text-shadow: none;
+}
+
+.copy {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.commentSlash {
+  color: var(--green-dim);
+  opacity: 0.5;
+}
+
+@media (max-width: 640px) {
+  .inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
